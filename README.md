@@ -21,7 +21,7 @@ This role has no external dependencies.
 Example Playbook
 ----------------
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+Please note that this role does force install, because there's currently no way to find out what version of guest additions is installed. For that reason you probably don't want to run this role every time, but only on initial box setup (or later if you need to upgrade)
 
     - hosts: servers
       roles:
