@@ -1,2 +1,3 @@
 # ansible-localcloud-vboxguest
-VirtualBox guest additions installer
+
+VirtualBox guest additions installer.
