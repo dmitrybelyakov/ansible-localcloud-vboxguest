@@ -11,7 +11,7 @@ This role has been tested on Ubuntu 14.04 LTS, but since it only uses generic li
 Role Variables
 --------------
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+`vboxguest_version ` Specifies what version of guest additions you wish to install. We try to maintain this to be mostly recent, but you better set this up yourself to what your VirtualBox version is.
 
 Dependencies
 ------------

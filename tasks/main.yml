@@ -1,0 +1,32 @@
+---
+- name: download guest additions iso
+  get_url: 
+    url=http://download.virtualbox.org/virtualbox/{{vboxguest_version}}/VBoxGuestAdditions_{{vboxguest_version}}.iso
+    dest='/tmp/VBoxGuestAdditions.iso'  
+
+- name: mount guest additions iso
+  mount:
+    name=/mnt 
+    src=/tmp/VBoxGuestAdditions.iso 
+    opts=ro,loop 
+    fstype=iso9660 
+    state=mounted
+
+- name: run guest additions install [ERRORS ARE FINE HERE]
+  shell: /mnt/VBoxLinuxAdditions.run
+  become: True
+  ignore_errors: True
+
+- name: unmount guest additions iso
+  mount:
+    name=/mnt 
+    src=/tmp/VBoxGuestAdditions.iso 
+    opts=ro,loop 
+    fstype=iso9660 
+    state=unmounted      
+
+- name: drop mount point
+  file: path=/mnt state=absent
+
+- name: drop guest additions iso
+  file: path=/tmp/VBoxGuestAdditions.iso state=absent    

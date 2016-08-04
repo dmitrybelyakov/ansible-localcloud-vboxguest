@@ -1,0 +1,17 @@
+---
+galaxy_info:
+  author: Dmitry Belyakov <dmitrybelyakov@gmail.com>
+  description: VirtualBox guest additions installer
+  license: MIT
+  min_ansible_version: 1.2
+  platforms:
+  - name: Ubuntu
+    versions:
+    - trusty
+  galaxy_tags:
+  - virtualbox
+  - development
+  - cloud
+dependencies: []
+
+  
